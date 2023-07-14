@@ -1,2 +1,16 @@
 var car = 'subaru';
-console.log("Is car == 'subaru'? I predict True.");
+var pet = "CAT";
+console.log("Is car == 'Nissan'? I predict False.");
+console.log(car === "Nissan");
+console.log("Is car == 'Subaru'? I predict False.");
+console.log(car === "Subaru");
+console.log("Is car == 'SUBARU'? I predict False.");
+console.log(car === "SUBARU");
+console.log("Is car == 'SubarU'? I predict False.");
+console.log(car === "SubarU");
+console.log("Is type of pet == number? I predict False.");
+console.log(typeof (pet) === "number");
+console.log("Is pet == 'CAT'? I predict True.");
+console.log(pet === "CAT");
+console.log("Is pet == 'cat'? I predict True.");
+console.log(pet.toLowerCase() === "cat");
