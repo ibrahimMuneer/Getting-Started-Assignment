@@ -42,4 +42,22 @@ myGuests.push("Hamza");
 
 greetings();
 
-export{myGuests};
+console.log(`Sadly the new table delivery that we were expecting today has been delayed\ntherefore can only invite two guests only.`);
+
+for(let i = 0; i < myGuests.length + 1; i++) {
+    if(myGuests.length > 2) {
+        console.log(`Sorry my friend ${myGuests.pop()}, we are unable to invite you for tonight's dinner.`);
+    }
+};
+
+for(let i = 0; i < myGuests.length; i++) {
+    console.log(`Hello ${myGuests[i]} you are still invited to the dinner tonight.`);
+};
+
+do {
+    myGuests.shift();
+} while (myGuests.length > 0);
+
+console.log(myGuests);
+
+export{};
