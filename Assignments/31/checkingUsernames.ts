@@ -1,17 +1,20 @@
 const current_users = ["Ibrahim", "Jhon", "trevor", "admin", "josh"];
 const new_users = ["Ibrahim", "Jhon", "mohsin", "Farooq", "Jawad"];
 
-function validate(curUsrs:string[], newUsrs:string[]) {
-    let existingUsernames:string[] = curUsrs.map(user => {
-        return user.toLowerCase();
-    });
-    newUsrs.map(user => {
-        if(existingUsernames.indexOf(user.toLowerCase()) > 0) {
-            console.log("Username not available.");
+function validate(curUsrs:string[], newUsrs:string[]):string[] {
+    let availableUsrNames:string[] = [];
+    curUsrs.map((user, index) => {
+        if(user.toLowerCase() === newUsrs[index].toLowerCase()) {
+            console.log(`Username not available`);
         } else {
-            console.log("Username available, creating account.")
+            availableUsrNames.push(newUsrs[index]);
         }
-    });
+    })
+    return availableUsrNames;
 };
 
-validate(current_users, new_users);
+let usrNames = validate(current_users, new_users);
+
+for(let i = 0; i < usrNames.length; i++){
+    console.log(`Creating user ${usrNames[i]}`);
+}

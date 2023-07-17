@@ -1,17 +1,19 @@
 var current_users = ["Ibrahim", "Jhon", "trevor", "admin", "josh"];
 var new_users = ["Ibrahim", "Jhon", "mohsin", "Farooq", "Jawad"];
 function validate(curUsrs, newUsrs) {
-    var existingUsernames = curUsrs.map(function (user) {
-        return user.toLowerCase();
-    });
-    newUsrs.map(function (user) {
-        if (existingUsernames.indexOf(user.toLowerCase()) > 0) {
-            console.log("Username not available.");
+    var availableUsrNames = [];
+    curUsrs.map(function (user, index) {
+        if (user.toLowerCase() === newUsrs[index].toLowerCase()) {
+            console.log("Username not available");
         }
         else {
-            console.log("Username available, creating account.");
+            availableUsrNames.push(newUsrs[index]);
         }
     });
+    return availableUsrNames;
 }
 ;
-validate(current_users, new_users);
+var usrNames = validate(current_users, new_users);
+for (var i = 0; i < usrNames.length; i++) {
+    console.log("Creating user ".concat(usrNames[i]));
+}
