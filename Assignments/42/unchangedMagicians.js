@@ -6,9 +6,10 @@ const show_magicians = (arr) => {
     });
 };
 const make_great = (arr) => {
-    for (let i = 0; i < arr.length; i++) {
-        arr.splice(i, 1, `The great ${arr[i]}`);
-    }
+    const newMagicians = arr.map(name => {
+        return `The great ${name}`;
+    });
+    return newMagicians;
 };
-make_great(magicians);
+console.log(make_great(magicians));
 show_magicians(magicians);
